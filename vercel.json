@@ -1,13 +1,4 @@
 {
   "buildCommand": "echo 'Static page - no build needed'",
-  "outputDirectory": "site",
-  "public": false,
-  "functions": {
-    "api/**/*.js": {
-      "memory": 1024,
-      "maxDuration": 60
-    }
-  },
-  "env": [],
-  "envPrefix": "REVENUECAT_"
+  "outputDirectory": "site"
 }
