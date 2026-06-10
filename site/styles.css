@@ -1,0 +1,453 @@
+/* ──────────────────────────────────────────────────────────────
+   RevenueCat /for-product/ refresh — skeleton styles
+   Tokens measured from the live DOM (see design.md / docs/08).
+   This is the skeleton stylesheet: structure + brand DNA in place,
+   final copy/visuals slot in later.
+   ────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Brand */
+  --rc-coral:      #F2545B;  /* logo + sparing accent + key stat numbers */
+  --rc-coral-ink:  #D63B43;  /* coral text-on-light / hover */
+  --rc-indigo:     #576DDB;  /* PRIMARY CTA + links */
+  --rc-indigo-700: #3F53C0;  /* CTA hover/active */
+  --rc-green:      #11D483;  /* positive signals only — never a CTA */
+
+  /* Ink & text (live-DOM measured) */
+  --rc-ink:        #1F1F47;  /* headings AND body */
+  --rc-ink-70:     #3D3D5C;  /* muted body / captions (dominant muted ink, 98× on homepage) */
+  --rc-ink-45:     #8A8AA3;  /* labels, eyebrows, disabled */
+
+  /* Surfaces (corrected to exact live-DOM values) */
+  --rc-bg:         #FFFFFF;
+  --rc-surface:    #F9F9FB;  /* card / section tint (dominant measured surface) */
+  --rc-surface-2:  #EEEFF6;  /* nested card / input fill */
+  --rc-border:     #EAEDF6;  /* hairlines */
+  --rc-ink-surface:#16162E;  /* dark band */
+
+  /* Pastel accent tints — the live page's real "color as accent" mechanism.
+     Use as full-block / chip / orb fills behind a feature, NOT as text color. */
+  --rc-tint-coral:  #F7D4D4;
+  --rc-tint-indigo: #C1C9F6;
+  --rc-tint-green:  #C1F6E0;
+
+  /* Type */
+  --rc-font-head: "Hanken Grotesk", "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --rc-font-body: "Inter", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+
+  /* Shape (corrected to live DOM: dominant radii are 4px + 16px; NO 20px on live) */
+  --rc-radius-pill: 999px;   /* buttons + chips are FULL pills (a core RC tell) */
+  --rc-radius-card: 16px;    /* cards — RC corners are crisper than they look */
+  --rc-radius-icon: 16px;
+  --rc-radius-sm:   4px;     /* the most-used radius on live: inputs, tags, small UI */
+
+  /* Elevation (live DOM uses a PURPLE-tinted shadow, not neutral ink) */
+  --rc-shadow-card:  0 3px 16px rgba(73,46,107,0.14);   /* measured live card shadow */
+  --rc-shadow-float: 0 8px 48px rgba(0,0,0,0.15);       /* measured live elevated shadow */
+
+  /* Rhythm (8pt base) */
+  --rc-section-y: clamp(72px, 9vw, 128px);
+  --rc-gutter:    clamp(20px, 4vw, 80px);
+  --rc-maxw:      1200px;
+
+  /* Gradients (measured from homepage DOM) */
+  --rc-grad-text: linear-gradient(92deg, #5A73F2 -14%, #4D4D4D 56%, #57DBA4 105%); /* RC uses this on ONE secondary headline ("Just one API"), not the hero */
+  --rc-grad-wash: linear-gradient(135deg, #EBEDF5, #FFFFFF);
+
+  /* Motion (measured easing + durations from homepage) */
+  --rc-ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  --rc-dur-hover:  0.3s;
+  --rc-dur-btn:    0.15s;
+  --rc-dur-reveal: 0.5s;
+  --rc-dur-lift:   0.4s;
+}
+
+/* ── Reset / base ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--rc-font-body);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--rc-ink);
+  background: var(--rc-bg);
+  -webkit-font-smoothing: antialiased;
+}
+/* RC headings run LIGHT — 500 display / 400 sub-heads, never 600/700, tight -0.04em tracking (design.md type scale, DOM-measured) */
+h1, h2, h3 { font-family: var(--rc-font-head); margin: 0; }
+h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 500; letter-spacing: -0.04em; line-height: 1.05; }
+h2 { font-size: clamp(40px, 5vw, 56px); font-weight: 500; letter-spacing: -0.04em; line-height: 1.12; }
+h3 { font-size: 20px; font-weight: 400; letter-spacing: -0.02em; }
+p  { margin: 0 0 1em; color: var(--rc-ink-70); }
+a  { color: var(--rc-indigo); text-decoration: none; transition: color var(--rc-dur-hover) var(--rc-ease); }
+img { max-width: 100%; display: block; }
+
+/* ── Layout helpers ───────────────────────────────────────────── */
+.section { padding-block: var(--rc-section-y); }
+.section--tint { background: var(--rc-surface); }
+.section--dark { background: var(--rc-ink-surface); color: #fff; }
+.section--dark h2, .section--dark h1 { color: #fff; }
+.section--dark p { color: rgba(255,255,255,0.7); }
+.section__inner { max-width: var(--rc-maxw); margin-inline: auto; padding-inline: var(--rc-gutter); }
+.stack > * + * { margin-top: 20px; }
+.center { text-align: center; }
+.measure { max-width: 720px; margin-inline: auto; }
+
+/* ── Buttons ──────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--rc-font-head); font-weight: 500; font-size: 16px;
+  padding: 14px 30px; border-radius: var(--rc-radius-pill);
+  transition: background-color var(--rc-dur-btn) var(--rc-ease),
+              filter var(--rc-dur-btn) var(--rc-ease),
+              color var(--rc-dur-btn) var(--rc-ease);
+  cursor: pointer; line-height: 1;
+}
+/* Measured homepage pattern: buttons shift via a brightness filter, not a hard color swap */
+.btn--primary   { background: var(--rc-indigo); color: #fff; border: 1px solid transparent; }
+.btn--primary:hover { background: var(--rc-indigo-700); filter: brightness(1.04); }
+.btn--secondary { background: transparent; color: var(--rc-ink); border: 1px solid var(--rc-border); }
+.btn--secondary:hover { background: var(--rc-surface); }
+.section--dark .btn--secondary { color: #fff; border-color: rgba(255,255,255,0.25); }
+.cta-pair { display: flex; gap: 12px; flex-wrap: wrap; }
+.cta-pair--center { justify-content: center; }
+
+/* ── Eyebrow chip ─────────────────────────────────────────────── */
+.eyebrow {
+  display: inline-block; font-family: var(--rc-font-head); font-weight: 500;
+  font-size: 13px; letter-spacing: .01em; color: var(--rc-ink-70);
+  background: #fff; border: 1px solid rgba(31,31,71,.08);
+  box-shadow: 0 1px 3px rgba(31,31,71,.06);
+  padding: 7px 16px; border-radius: var(--rc-radius-pill);
+}
+.section--dark .eyebrow { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.8); }
+
+/* ── Nav ──────────────────────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px var(--rc-gutter);
+  background: rgba(255,255,255,.85); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rc-border);
+}
+.nav__logo { font-family: var(--rc-font-head); font-weight: 700; color: var(--rc-coral); font-size: 22px; }
+.nav__links { display: flex; gap: 28px; }
+.nav__links a { color: var(--rc-ink); font-size: 15px; }
+.nav__links a:hover { color: var(--rc-coral-ink); }
+.nav__item--menu { display: inline-flex; align-items: center; gap: 6px; }
+.nav__item--menu::after {
+  content: ""; width: 0; height: 0; margin-top: 2px;
+  border-left: 4px solid transparent; border-right: 4px solid transparent;
+  border-top: 4px solid currentColor; transition: color .15s ease;
+}
+
+/* Log In is indigo on the live nav */
+.nav__login { color: var(--rc-indigo) !important; font-weight: 500; }
+.nav__login:hover { color: var(--rc-indigo-700) !important; }
+.nav__actions { display: flex; gap: 16px; align-items: center; }
+.nav__actions > a:first-child { color: var(--rc-ink); font-size: 15px; align-self: center; }
+@media (max-width: 860px) { .nav__links { display: none; } }
+
+/* ── Hero ─────────────────────────────────────────────────────── */
+.hero { padding-block: clamp(64px, 8vw, 112px); text-align: center; }
+.hero .measure { margin-bottom: 32px; }
+.hero__proof { color: var(--rc-ink-45); font-size: 14px; margin-top: 24px; }
+
+/* ── Two-up section ───────────────────────────────────────────── */
+.two-up { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
+.two-up--reverse .two-up__copy { order: 2; }
+@media (max-width: 768px) {
+  .two-up { grid-template-columns: 1fr; }
+  .two-up--reverse .two-up__copy { order: 0; }
+}
+
+/* ── Generic placeholder visual box ───────────────────────────── */
+.visual-ph {
+  border: 1px dashed var(--rc-border); border-radius: var(--rc-radius-card);
+  background: var(--rc-surface); min-height: 280px;
+  display: grid; place-items: center; color: var(--rc-ink-45);
+  font-size: 14px; text-align: center; padding: 24px;
+}
+
+/* ── Feature tiles ────────────────────────────────────────────── */
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 768px) { .tiles { grid-template-columns: 1fr; } }
+.tile {
+  background: var(--rc-bg); border: 1px solid var(--rc-border);
+  border-radius: var(--rc-radius-card); padding: 28px; box-shadow: var(--rc-shadow-card);
+}
+.tile__icon {
+  width: 48px; height: 48px; display: grid; place-items: center;
+  border-radius: var(--rc-radius-icon); background: var(--rc-surface);
+  box-shadow: var(--rc-shadow-card); margin-bottom: 16px;
+}
+.tile h3 { margin: 0 0 6px; }
+.tile p  { margin: 0; }
+
+/* ── Stat blocks ──────────────────────────────────────────────── */
+.stats { display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 72px); justify-content: center; }
+.stat { text-align: center; }
+.stat__num {
+  display: block; font-family: var(--rc-font-head); font-weight: 700;
+  font-size: clamp(40px, 5vw, 64px); color: var(--rc-coral); letter-spacing: -.03em;
+}
+.stat__cap { color: var(--rc-ink-45); font-size: 14px; }
+
+/* ── Logo band ────────────────────────────────────────────────── */
+.logos { padding-block: 48px; text-align: center; }
+.logos__label {
+  font-family: var(--rc-font-head); font-weight: 500;
+  color: var(--rc-ink-70); font-size: 18px; letter-spacing: -.01em;
+  margin-bottom: 40px;
+}
+.logos__row {
+  display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 56px);
+  justify-content: center; align-items: center;
+  filter: grayscale(1); opacity: .7;
+}
+.logo-img { height: 26px; width: auto; display: block; }
+.logo-img--wide { height: 19px; }   /* long wordmarks: trim height so row widths balance */
+/* placeholder fallback (unused once real logos are in) */
+.logo-ph {
+  width: 120px; height: 34px; border-radius: 6px;
+  background: var(--rc-surface-2); color: var(--rc-ink-45);
+  display: grid; place-items: center; font-size: 12px;
+}
+
+/* ── Testimonial ──────────────────────────────────────────────── */
+.quote { background: var(--rc-surface); border-radius: var(--rc-radius-card); padding: 32px; }
+.section--dark .quote { background: rgba(255,255,255,0.06); }
+.quote blockquote { font-family: var(--rc-font-head); font-size: 22px; line-height: 1.4; margin: 0 0 20px; }
+.quote figcaption { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--rc-ink-70); }
+.quote__metric { color: var(--rc-coral-ink); font-weight: 600; margin-top: 16px; }
+.trust-row { margin-top: 20px; font-size: 14px; font-weight: 500; letter-spacing: .01em; color: var(--rc-ink-45); }
+
+/* ── CTA band ─────────────────────────────────────────────────── */
+.cta-band { text-align: center; }
+.cta-band h2 { margin-bottom: 28px; }
+
+/* ── Footer ───────────────────────────────────────────────────── */
+.footer { background: var(--rc-ink-surface); color: rgba(255,255,255,0.6); padding-block: 56px; }
+.footer__cols { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+.footer__cols h4 { font-family: var(--rc-font-head); color: #fff; font-size: 14px; margin: 0 0 14px; }
+.footer__cols a { display: block; color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 8px; }
+.footer__logo { font-family: var(--rc-font-head); font-weight: 700; color: var(--rc-coral); font-size: 22px; }
+@media (max-width: 768px) { .footer__cols { grid-template-columns: 1fr 1fr; } }
+
+/* Skeleton marker — remove as sections get real content */
+[data-skeleton] { outline: none; }
+
+/* ════════════════════════════════════════════════════════════════
+   Structure to mirror the live /for-product/ arc (docs/reference.hml)
+   ════════════════════════════════════════════════════════════════ */
+
+/* Section background alternation (live uses gray-50 / white) */
+.section--gray { background: var(--rc-surface); }
+
+/* Shared centered section header */
+.section-head { text-align: center; max-width: 720px; margin: 0 auto clamp(40px, 6vw, 64px); }
+.section-head .eyebrow { margin-bottom: 16px; }
+.section-head h2 { margin-bottom: 16px; }
+.section-head p { margin: 0 auto; }
+
+/* Inline arrow link (live's recurring ghost CTA) */
+.link-arrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--rc-font-head); font-weight: 500; font-size: 16px;
+  color: var(--rc-indigo);
+}
+.link-arrow:hover { color: var(--rc-indigo-700); }
+
+/* ── 1. Hero (two-column, copy left / visual right) ──────────── */
+.hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
+.hero { padding-block: clamp(72px, 9vw, 120px); text-align: left; }
+.hero__copy .eyebrow { order: -1; }
+.hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.hero__copy h1 { font-weight: 500; letter-spacing: -0.04em; line-height: 1.02; }
+.hero__copy p { max-width: 440px; }
+@media (max-width: 860px) {
+  .hero__grid { grid-template-columns: 1fr; text-align: center; }
+  .hero__copy { align-items: center; }
+  .hero__copy p { margin-inline: auto; }
+  .cta-pair { justify-content: center; }
+}
+
+/* Signature flow diagram — coins → dotted lines → RC hexagon (design.md) */
+.flow { position: relative; width: 100%; max-width: 460px; margin-inline: auto; aspect-ratio: 420 / 360; }
+.flow__lines { position: absolute; inset: 0; width: 100%; height: 100%; }
+.flow .coin, .flow .hex, .flow .hexghost {
+  position: absolute; transform: translate(-50%, -50%);
+  display: grid; place-items: center;
+}
+.flow .coin {
+  width: 52px; height: 52px; border-radius: var(--rc-radius-icon);
+  background: #fff; box-shadow: var(--rc-shadow-float);
+  font-family: var(--rc-font-head); font-weight: 600; font-size: 13px; color: var(--rc-ink-70);
+}
+.coin--tl { left: 9.5%; top: 18%; }
+.coin--ml { left: 9.5%; top: 50%; }
+.coin--bl { left: 9.5%; top: 82%; }
+.coin--tr { left: 90.5%; top: 18%; color: var(--rc-green); font-size: 20px; }
+.coin--mr { left: 90.5%; top: 50%; color: var(--rc-indigo); font-size: 20px; }
+.coin--br { left: 90.5%; top: 82%; color: var(--rc-coral); font-size: 20px; }
+
+.flow .hexghost {
+  left: 50%; top: 50%; width: 186px; height: 205px; background: var(--rc-surface); opacity: .6;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.flow .hex {
+  left: 50%; top: 50%; width: 122px; height: 134px;
+  background: #fff; box-shadow: var(--rc-shadow-float);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  font-family: var(--rc-font-head); font-weight: 700; font-size: 30px; color: var(--rc-coral);
+  letter-spacing: -.02em;
+}
+
+/* ── 3. Feature grid — gradient-bordered cards w/ icon coins ──── */
+.fgrid { list-style: none; margin: 0 auto; padding: 0; max-width: 960px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.fgrid .fcard--wide { grid-column: span 2; }
+@media (max-width: 768px) { .fgrid { grid-template-columns: 1fr; max-width: 420px; }
+  .fgrid .fcard--wide { grid-column: span 1; } }
+
+/* Feature tile — design.md recipe: white bg, hairline, soft card, card shadow */
+.fcard {
+  background: var(--rc-bg); border: 1px solid var(--rc-border);
+  border-radius: var(--rc-radius-card); padding: 28px; box-shadow: var(--rc-shadow-card);
+}
+.fcard h3 { margin: 0 0 6px; }
+.fcard p { margin: 0; font-weight: 400; color: var(--rc-ink-70); }
+.fcard__glow { display: none; }   /* legacy reference glow — superseded by design.md tile */
+
+/* Icon coin — design.md: 48px soft square, surface fill, card shadow, accent glyph */
+.fcard__icon {
+  width: 48px; height: 48px; border-radius: var(--rc-radius-icon);
+  background: var(--rc-surface); box-shadow: var(--rc-shadow-card);
+  display: grid; place-items: center; margin-bottom: 16px;
+  font-size: 18px; line-height: 1; color: var(--rc-ink-70);
+}
+.fcard__icon--red   { color: var(--rc-coral); }
+.fcard__icon--green { color: var(--rc-green); }
+.fcard__icon--blue  { color: var(--rc-indigo); }
+
+/* ── 4. Testimonial — design.md .quote card ─────────────────── */
+.quote--feature { max-width: 820px; margin: 0 auto; }
+.quote--feature blockquote { font-size: clamp(22px, 2.5vw, 30px); line-height: 1.3; color: var(--rc-ink); }
+.quote__avatar {
+  width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+  background: var(--rc-surface-2); display: grid; place-items: center;
+  font-size: 12px; color: var(--rc-ink-45);
+}
+
+/* ── 5/6. Split sections (copy + visual, alternating) ───────── */
+.split__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 96px); align-items: center; }
+.split__grid--reverse .split__copy { order: 2; }
+.split__copy .eyebrow { margin-bottom: 16px; }
+.split__copy h2 { margin-bottom: 24px; }
+@media (max-width: 768px) {
+  .split__grid { grid-template-columns: 1fr; }
+  .split__grid--reverse .split__copy { order: 0; }
+}
+
+.checklist { list-style: none; margin: 0 0 28px; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.checklist li { display: flex; gap: 10px; color: var(--rc-ink-70); font-size: 17px; line-height: 1.5; }
+.check { color: var(--rc-indigo); font-weight: 700; flex-shrink: 0; }
+
+/* ── 7. How it works — 3-step row ───────────────────────────── */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(32px, 5vw, 80px); }
+.step h3 { margin: 0 0 6px; }
+.step p { margin: 0; }
+@media (max-width: 768px) { .steps { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; } }
+
+/* ── 8. Carousel — horizontal scroll of cards ───────────────── */
+.carousel__track {
+  display: flex; gap: 24px; overflow-x: auto; padding-bottom: 8px;
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+}
+.carousel__track::-webkit-scrollbar { height: 6px; }
+.carousel__track::-webkit-scrollbar-thumb { background: var(--rc-border); border-radius: 999px; }
+.ccard {
+  flex: 0 0 320px; scroll-snap-align: start;
+  background: var(--rc-surface); border: 1px solid var(--rc-border);
+  border-radius: var(--rc-radius-card); padding: 28px 24px;
+}
+.ccard h3 { font-size: clamp(32px, 4vw, 44px); color: var(--rc-coral); letter-spacing: -.03em; margin: 0 0 6px; }
+.ccard p { margin: 0; color: var(--rc-ink-70); }
+
+/* ── 9. Final CTA (light, centered, matches live) ───────────── */
+.cta-band { text-align: center; }
+.cta-band h2 { margin-bottom: 20px; }
+
+/* ════════════════════════════════════════════════════════════════
+   Homepage-derived additions (design.md §5 — DOM-measured 2026-06-06)
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Gradient text helper (OPTIONAL, currently unused) — RC applies this indigo→teal→green
+   gradient via bg-clip:text on ONE secondary headline ("Just one API"), not the hero H1.
+   Kept here for optional single use on a sub-headline; do not put it on the primary H1. ── */
+.grad-text {
+  background: var(--rc-grad-text);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+
+/* ── Stat cluster numbers: footnote marker stays subtle ── */
+.stat__num sup { font-size: .4em; color: var(--rc-ink-45); font-weight: 500; top: -1.1em; }
+
+/* ── Minimal case-study cards — homepage proof pattern (logo + bold metric + link) ── */
+.cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 768px) { .cases { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; } }
+.case {
+  display: flex; flex-direction: column; gap: 12px;
+  background: var(--rc-surface); border: 1px solid var(--rc-border);
+  border-radius: var(--rc-radius-card); padding: 28px; text-decoration: none;
+  transition: transform var(--rc-dur-lift) var(--rc-ease), box-shadow var(--rc-dur-lift) var(--rc-ease);
+}
+.case:hover { transform: translateY(-4px); box-shadow: var(--rc-shadow-card); }
+.case__logo { height: 22px; width: auto; filter: grayscale(1); opacity: .75; align-self: flex-start; }
+.case__metric { font-family: var(--rc-font-head); font-weight: 500; font-size: 24px; color: var(--rc-ink); letter-spacing: -.03em; line-height: 1.15; }
+.case__metric .accent { color: var(--rc-coral); }
+.case__source { color: var(--rc-ink-70); font-size: 14px; line-height: 1.45; }
+.case__link { color: var(--rc-indigo); font-weight: 500; font-size: 14px; margin-top: auto; }
+
+/* ── Card lift on hover — measured transform 0.4s (tiles + feature cards) ── */
+.tile, .fcard { transition: transform var(--rc-dur-lift) var(--rc-ease), box-shadow var(--rc-dur-lift) var(--rc-ease); }
+.tile:hover, .fcard:hover { transform: translateY(-4px); box-shadow: var(--rc-shadow-float); }
+
+/* ── Logo marquee — continuous scroll + edge-fade mask (replaces static wrap) ── */
+.logos__viewport { overflow: hidden; }
+.logos--mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.logos__row--marquee {
+  flex-wrap: nowrap; width: max-content; justify-content: flex-start;
+  gap: clamp(40px, 6vw, 72px);
+  animation: rc-marquee 38s linear infinite;
+}
+.logos__row--marquee:hover { animation-play-state: paused; }
+@keyframes rc-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── Echoed slim logo row near the final CTA ── */
+.logos--echo { padding-block: 0 8px; }
+.logos--echo .logo-img { height: 22px; }
+
+/* ── Scroll-reveal fade-in — design.md §5. Hidden state is gated behind `.js`
+   so the page is fully visible if JS is disabled (deployable, no blank content). ── */
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity var(--rc-dur-reveal) linear, transform var(--rc-dur-reveal) var(--rc-ease); }
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal, .reveal { opacity: 1; transform: none; transition: none; }
+  .logos__row--marquee { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
+  .tile, .fcard, .case { transition: none; }
+  .tile:hover, .fcard:hover, .case:hover { transform: none; }
+}
+
+/* ── Decorative pastel orb — the live "color on white" device (optional accent) ── */
+.orb { position: absolute; border-radius: var(--rc-radius-pill); filter: blur(2px); pointer-events: none; z-index: 0; }
+.orb--coral  { background: var(--rc-tint-coral); }
+.orb--indigo { background: var(--rc-tint-indigo); }
+.orb--green  { background: var(--rc-tint-green); }

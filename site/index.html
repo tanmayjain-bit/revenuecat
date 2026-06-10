@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RevenueCat for Product Managers (skeleton)</title>
+  <meta name="description" content="Drive revenue at product speed. (skeleton, copy to be finalized)" />
+
+  <!-- Fonts: deployable Google subs (RC's Object Sans is paid — not shipped) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <!-- JS flag: only when JS runs do reveal targets start hidden (no-JS = fully visible) -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- ══ NAV ═══════════════════════════════════════════════════ -->
+  <header class="nav">
+    <a class="nav__logo" href="#top">RevenueCat</a>
+    <nav class="nav__links">
+      <a href="#pillars" class="nav__item nav__item--menu">Why RevenueCat?</a>
+      <a href="#" class="nav__item nav__item--menu">Solutions</a>
+      <a href="#" class="nav__item nav__item--menu">Developers</a>
+      <a href="#" class="nav__item nav__item--menu">Resources</a>
+      <a href="#pricing" class="nav__item">Pricing</a>
+    </nav>
+    <div class="nav__actions">
+      <a href="#login" class="nav__login">Log In</a>
+      <a class="btn btn--primary" href="#signup">Sign Up</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ══ 1. HERO — two-column, copy left / visual right ═══════ -->
+    <section class="section section--gray hero">
+      <div class="section__inner hero__grid">
+        <div class="hero__copy stack">
+          <span class="eyebrow">For product teams</span>
+          <h1 data-skeleton>Drive revenue at product speed</h1>
+          <p>Move your revenue, not your roadmap. Change pricing, paywalls, and packaging on your cadence, no app release, no store review.</p>
+          <div class="cta-pair">
+            <a class="btn btn--primary" href="#signup">Start for free</a>
+            <a class="link-arrow" href="#demo">Talk to sales →</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="flow" aria-hidden="true">
+            <svg class="flow__lines" viewBox="0 0 420 360" preserveAspectRatio="none">
+              <g fill="none" stroke="#E4E5EE" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7">
+                <path d="M40 65 L210 180" />
+                <path d="M40 180 L210 180" />
+                <path d="M40 295 L210 180" />
+                <path d="M210 180 L380 65" />
+                <path d="M210 180 L380 180" />
+                <path d="M210 180 L380 295" />
+              </g>
+            </svg>
+            <span class="hexghost"></span>
+            <span class="coin coin--tl">iOS</span>
+            <span class="coin coin--ml">Android</span>
+            <span class="coin coin--bl">Web</span>
+            <span class="coin coin--tr">✓</span>
+            <span class="coin coin--mr">↻</span>
+            <span class="coin coin--br">✕</span>
+            <span class="hex">RC</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 2. TRUSTED-BY LOGOS — repeating marquee (homepage pattern) ═══ -->
+    <section class="section--gray logos">
+      <div class="section__inner">
+        <p class="logos__label">Product teams that use RevenueCat:</p>
+        <div class="logos__viewport logos--mask">
+          <div class="logos__row logos__row--marquee">
+            <img class="logo-img" src="assets/logos/openai.svg" alt="OpenAI" />
+            <img class="logo-img" src="assets/logos/notion.svg" alt="Notion" />
+            <img class="logo-img" src="assets/logos/vsco.svg" alt="VSCO" />
+            <img class="logo-img logo-img--wide" src="assets/logos/elevenlabs.svg" alt="ElevenLabs" />
+            <img class="logo-img" src="assets/logos/photoroom.svg" alt="Photoroom" />
+            <img class="logo-img" src="assets/logos/cameo.svg" alt="Cameo" />
+            <img class="logo-img" src="assets/logos/goodnotes.svg" alt="Goodnotes" />
+            <img class="logo-img" src="assets/logos/stocktwits.svg" alt="StockTwits" />
+            <!-- duplicate set for a seamless -50% loop (aria-hidden) -->
+            <img class="logo-img" src="assets/logos/openai.svg" alt="" aria-hidden="true" />
+            <img class="logo-img" src="assets/logos/notion.svg" alt="" aria-hidden="true" />
+            <img class="logo-img" src="assets/logos/vsco.svg" alt="" aria-hidden="true" />
+            <img class="logo-img logo-img--wide" src="assets/logos/elevenlabs.svg" alt="" aria-hidden="true" />
+            <img class="logo-img" src="assets/logos/photoroom.svg" alt="" aria-hidden="true" />
+            <img class="logo-img" src="assets/logos/cameo.svg" alt="" aria-hidden="true" />
+            <img class="logo-img" src="assets/logos/goodnotes.svg" alt="" aria-hidden="true" />
+            <img class="logo-img" src="assets/logos/stocktwits.svg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 2.5 PROBLEM — name the pain (one dark band) ═════════ -->
+    <section class="section section--dark">
+      <div class="section__inner stack measure center">
+        <span class="eyebrow">The problem</span>
+        <h2 data-skeleton>You own the revenue number, but you can't move it yourself</h2>
+        <p>Every pricing or paywall change waits on an engineering sprint and a store review. Fewer shots on goal, and they land weeks late.</p>
+      </div>
+    </section>
+
+    <!-- ══ 2.6 SHIFT — insight bridge into the pillars ═════════ -->
+    <section class="section section--gray" id="pillars">
+      <div class="section__inner stack measure center">
+        <span class="eyebrow">The shift</span>
+        <h2 data-skeleton>Monetization just got off the release train</h2>
+        <p>It's yours to operate directly now. The conversion, ARPU, churn, and ARR you're measured on are levers you can finally pull.</p>
+      </div>
+    </section>
+
+    <!-- ══ 4. BIG TESTIMONIAL ══════════════════════════════════ -->
+    <section class="section social-proof">
+      <div class="section__inner">
+        <figure class="quote quote--feature">
+          <blockquote data-skeleton>"With RevenueCat, we never had to slow down. They made it easy to keep our focus on building the best product."</blockquote>
+          <figcaption><span class="quote__avatar"><img src="assets/logos/openai.svg" alt="ChatGPT" width="30" /></span><span><strong>Sara Conlon</strong>, Head of Financial Engineering · ChatGPT</span></figcaption>
+          <p class="quote__metric"><a class="link-arrow" href="https://www.revenuecat.com/customers/">Read case study →</a></p>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ══ 5. SPLIT — copy + visual (checkmark bullets) ════════ -->
+    <section class="section section--gray split">
+      <div class="section__inner split__grid">
+        <div class="split__copy">
+          <h2 data-skeleton>Hit your number without waiting on a release</h2>
+          <ul class="checklist">
+            <li><span class="check">✓</span> Redesign, reprice, and ship a paywall yourself, with no release and no store review.</li>
+            <li><span class="check">✓</span> Stand up web-to-app funnels that test offers before users reach the store.</li>
+            <li><span class="check">✓</span> Engineering wires it in once; every change after that is yours to ship.</li>
+          </ul>
+          <p class="quote__metric">Pixelcut: +16% paying customers from one A/B test.</p>
+          <a class="btn btn--primary" href="#signup">Start for free</a>
+        </div>
+        <div class="split__visual"><div class="visual-ph">Paywall editor / drag-and-drop config</div></div>
+      </div>
+    </section>
+
+    <!-- ══ 6. SPLIT (reversed) — visual + copy ═════════════════ -->
+    <section class="section section--gray split">
+      <div class="section__inner split__grid split__grid--reverse">
+        <div class="split__copy">
+          <h2 data-skeleton>Quote every figure with confidence</h2>
+          <ul class="checklist">
+            <li><span class="check">✓</span> One revenue number across iOS, Android, and web, not three dashboards that disagree.</li>
+            <li><span class="check">✓</span> Refunds and grace periods already netted out, so the figure you quote holds up.</li>
+            <li><span class="check">✓</span> The same numbers flow into 40+ tools your team already uses, like Amplitude, Mixpanel, Braze, and BigQuery.</li>
+          </ul>
+          <p class="quote__metric">"One single source of truth for subscription and revenue data." — Olivier Lemariè, Head of Growth &amp; Marketing, Photoroom</p>
+          <a class="btn btn--secondary" href="#demo">Talk to sales</a>
+        </div>
+        <div class="split__visual"><div class="visual-ph">"One truth → many tools" hub-and-spoke + integration grid</div></div>
+      </div>
+    </section>
+
+    <!-- ══ 7. HOW IT WORKS — 3-step row ════════════════════════ -->
+    <section class="section how">
+      <div class="section__inner">
+        <header class="section-head">
+          <h2 data-skeleton>Decide earlier, on what's going to happen</h2>
+          <p class="measure">55% of 3-day-trial cancels happen on Day 0, and lagging conversion data finds it too late.</p>
+        </header>
+        <ul class="steps">
+          <li class="step">
+            <span class="fcard__icon fcard__icon--green">◆</span>
+            <h3>Run the experiment</h3>
+            <p>Test paywalls, pricing, and packaging, in draft or live.</p>
+          </li>
+          <li class="step">
+            <span class="fcard__icon fcard__icon--blue">◆</span>
+            <h3>See the predicted winner</h3>
+            <p>Predicted 12-month LTV calls it mid-experiment, before conversion data catches up.</p>
+          </li>
+          <li class="step">
+            <span class="fcard__icon fcard__icon--red">◆</span>
+            <h3>Roll it out in one action</h3>
+            <p>Promote the winner to everyone in one click. No release.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══ 7.5 FEATURE SURFACE — bento of specific features ════ -->
+    <section class="section section--gray feature-list">
+      <div class="section__inner">
+        <header class="section-head">
+          <h2 data-skeleton>Run every monetization move from one platform</h2>
+          <p class="measure">Paywalls to billing to analytics, every product you need in one place.</p>
+        </header>
+        <ul class="fgrid">
+          <li class="fcard">
+            <span class="fcard__icon fcard__icon--red">◆</span>
+            <h3>Paywalls</h3>
+            <p>Build and publish paywalls with no code, using drag-and-drop or AI generation, with Figma import.</p>
+          </li>
+          <li class="fcard">
+            <span class="fcard__icon fcard__icon--blue">◆</span>
+            <h3>Web-to-App Funnels</h3>
+            <p>Turn web traffic into subscribers with no-code onboarding funnels and a web checkout.</p>
+          </li>
+          <li class="fcard">
+            <span class="fcard__icon fcard__icon--green">◆</span>
+            <h3>Experiments</h3>
+            <p>Run multivariate price and paywall tests, and roll out the predicted-LTV winner in one click.</p>
+          </li>
+          <li class="fcard">
+            <span class="fcard__icon fcard__icon--red">◆</span>
+            <h3>Targeting</h3>
+            <p>Show the right offer to the right cohort with a rules engine.</p>
+          </li>
+          <li class="fcard">
+            <span class="fcard__icon fcard__icon--green">◆</span>
+            <h3>Web Billing</h3>
+            <p>Sell on the web and auto-unlock in-app access, skipping the 15-30% store commission.</p>
+          </li>
+          <li class="fcard">
+            <span class="fcard__icon fcard__icon--blue">◆</span>
+            <h3>Charts</h3>
+            <p>Real-time revenue, cohort, and LTV-prediction analytics, in the dashboard or via API.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══ 7.7 PROOF — minimal outcome-first case cards (homepage pattern) ═══ -->
+    <section class="section">
+      <div class="section__inner reveal">
+        <header class="section-head">
+          <h2 data-skeleton>Real outcomes from product teams</h2>
+        </header>
+        <div class="cases">
+          <a class="case" href="https://www.revenuecat.com/customers/">
+            <span class="case__metric"><span class="accent">$1M ARR</span> in 16 days</span>
+            <span class="case__source">ElevenLabs, on its mobile launch</span>
+            <span class="case__link">Read case study →</span>
+          </a>
+          <a class="case" href="https://www.revenuecat.com/customers/">
+            <span class="case__metric"><span class="accent">30×</span> year-over-year growth</span>
+            <span class="case__source">Runna, scaling its subscription business</span>
+            <span class="case__link">Read case study →</span>
+          </a>
+          <a class="case" href="https://www.revenuecat.com/customers/">
+            <span class="case__metric"><span class="accent">0 → 100K</span> subscribers</span>
+            <span class="case__source">Ladder, across iOS, Android, and web</span>
+            <span class="case__link">Read case study →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 8. VALUE + CLOSE — what's included + pricing + CTA ═════ -->
+    <section class="section section--gray" id="signup">
+      <div class="section__inner stack measure center">
+        <span class="eyebrow">What's included</span>
+        <h2 data-skeleton>Move faster, and keep more of the upside</h2>
+        <p>Paywalls, Experiments, and Web Billing, all included — nothing extra to build or maintain. Free under $2,500/mo, then 1%: you only pay when you earn.</p>
+        <p class="quote__metric">Floga earned six figures in a day — before launch, commission-free.</p>
+        <p class="trust-row">SOC 2 Type II · GDPR compliant · 4.8/5 on G2 &amp; Capterra</p>
+        <div class="cta-pair cta-pair--center">
+          <a class="btn btn--primary" href="#signup">Start for free</a>
+          <a class="btn btn--secondary" href="#demo">Talk to sales</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="section__inner">
+      <div class="footer__cols">
+        <div>
+          <div class="footer__logo">RevenueCat</div>
+          <p style="margin-top:12px;">Skeleton build, for-product refresh.</p>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <a href="#">Paywalls</a><a href="#">Experiments</a><a href="#">Charts &amp; analytics</a><a href="#">Web Billing</a>
+        </div>
+        <div>
+          <h4>Solutions</h4>
+          <a href="#">For product teams</a><a href="#">For engineering</a><a href="#">Enterprise</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="#">Customer stories</a><a href="#">Blog</a><a href="#">Pricing</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="#">Privacy</a><a href="#">Terms</a><a href="#">GDPR</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-reveal: tag below-the-fold section blocks, then fade them in on enter.
+       Degrades gracefully — no IO / reduced-motion / no-JS all leave content visible. -->
+  <script>
+    (function () {
+      var blocks = [].slice.call(document.querySelectorAll('.section__inner'));
+      blocks.forEach(function (n) { if (!n.closest('.hero')) n.classList.add('reveal'); });
+
+      var targets = [].slice.call(document.querySelectorAll('.reveal'));
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(function (n) { n.classList.add('is-in'); });
+        return;
+      }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-in'); obs.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.04 });
+      targets.forEach(function (n) { obs.observe(n); });
+    })();
+  </script>
+
+</body>
+</html>
