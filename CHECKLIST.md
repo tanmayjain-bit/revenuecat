@@ -7,5 +7,4 @@
 
 ## Final checks
 
-- [ ] **Claims audit** – Verify all stats on the live page against the brief PDF (ElevenLabs $1M ARR, Runna 30×, Ladder 0→100K, Pixelcut +16%, Floga six figures).
 - [ ] **Track 0 final audit** – Confirm all assumptions and tooling log entries are backfilled in `docs/00-process-and-assumptions.md`.
