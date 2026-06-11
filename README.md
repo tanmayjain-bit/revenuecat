@@ -13,15 +13,15 @@
 
 ## Assumptions
 
-| Assumption | Why |
-|---|---|
-| Velocity leads the narrative | Defeats build-in-house directly. Verified by brief and ICP interview ("move wayyy faster"). |
-| Build-vs-buy is an objection, not a pillar | A pillar makes the page argue against a ghost. The brief says don't name competitors. |
-| Audience narrowed to the Monetization/Growth PM | The brief's JTBD describes exactly this person. One sharp persona beats a 5-persona router. |
-| "Start for free" is the primary CTA | The live page gates self-serve behind a demo request. RC is free to $2,500 MTR. No reason to gate. |
-| BCV's "~1/3 of new subscription apps" leads scale | No third party verifies RC's self-reported 106K apps / $14B figures. Sourced stat is more credible. |
-| Web Billing kept secondary | ICP interview: iOS/Android-only PM, zero web interest. Brief still requires it, so it earns a place. |
-| Desktop-only | The brief's bar is a functional page on a 4-6 hr budget. Reviewer is on desktop. |
+| Assumption | Why | What changes if wrong |
+|---|---|---|
+| Velocity leads the narrative | Defeats build-in-house directly. Verified by brief and ICP interview ("move wayyy faster"). | Pillars re-order; section inventory stays the same. |
+| Build-vs-buy is an objection, not a pillar | A pillar makes the page argue against a ghost. The brief says don't name competitors. | Promote to its own section if testing shows it needs more weight. |
+| Audience narrowed to the Monetization/Growth PM | The brief's JTBD describes exactly this person. One sharp persona beats a 5-persona router. | Broaden hero copy; structure holds. |
+| "Start for free" is the primary CTA | The live page gates self-serve behind a demo request. RC is free to $2,500 MTR. No reason to gate. | Swap CTA priority based on conversion data. |
+| BCV's "~1/3 of new subscription apps" leads scale | No third party verifies RC's self-reported 106K apps / $14B figures. Sourced stat is more credible. | Self-reported figures are ready as a swap. |
+| Web Billing kept secondary | ICP interview: iOS/Android-only PM, zero web interest. Brief still requires it, so it earns a place. | Promote if the target audience tilts toward web-to-app funnels. |
+| Desktop-only | The brief's bar is a functional page on a 4-6 hr budget. Reviewer is on desktop. | A static Tailwind page is straightforward to make responsive as an additive pass. |
 
 ## Process
 
@@ -33,9 +33,15 @@ Research ran in parallel. Build was gated behind a committed positioning brief. 
 
 **Phase 3 — Build.** Single static page, Tailwind, no framework. Deployed to Vercel.
 
-One catch: Perplexity invented Hacker News quotes and user handles that don't exist. A cross-checking subagent caught them. Nothing fabricated reached the page.
-
 Full log: [`docs/00-process-and-assumptions.md`](docs/00-process-and-assumptions.md)
+
+## Pivots
+
+- **Web Billing demoted.** Started as a co-equal feature. The ICP interview surfaced an iOS/Android-only PM with zero web interest, so it became secondary. The brief still requires it, so it earns a section, not the lead.
+- **Build-vs-buy became an objection, not a pillar.** Early positioning drafts treated it as a standalone argument. Synthesis revealed that elevating it makes the page argue against a ghost. Woven underneath all three pillars instead, with a concede-then-reframe beat.
+- **Scale stat switched.** Planned to lead with RC's self-reported 106K apps / $14B tracked revenue. Research found no third party verifies those figures. Swapped to BCV's sourced "~1/3 of new subscription apps."
+- **CTA flipped.** The live page leads with "Request a demo." Auditing the conversion logic made clear that gates self-serve behind a sales call with no commercial reason to do so. "Start for free" became primary; demo became tertiary.
+- **Perplexity fabricated quotes.** A subagent cross-checking VoC sources found Perplexity invented Hacker News users and quotes that don't exist. All fabricated material was discarded before reaching the page.
 
 ## Page goal
 
