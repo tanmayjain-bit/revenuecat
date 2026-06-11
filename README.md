@@ -22,6 +22,7 @@ I treated this as a positioning problem first. I wrote no code until the messagi
 | Audience narrowed to the Monetization/Growth PM | The brief's jobs-to-be-done describes exactly this person. One sharp persona beats a 5-persona router. | Broaden hero copy; structure holds. |
 | "Start for free" is the primary CTA | The live page gates self-serve behind a demo request. RC is free to $2,500 MTR. No reason to gate. | Swap CTA priority based on conversion data. |
 | BCV's "~1/3 of new subscription apps" leads scale | No third party verifies RC's self-reported 106K apps / $14B figures. Sourced stat is more credible. | Self-reported figures are ready as a swap. |
+| Case study stats from revenuecat.com/testimonials | The brief only names Floga. ElevenLabs, Runna, Ladder, and Pixelcut were verified against RC's testimonials page and individual case study URLs before use. | Swap to next verified stat if RC removes a case study. |
 | Web Billing kept secondary | User interview: iOS/Android-only PM, zero web interest. Brief still requires it, so it earns a place. | Promote if the target audience tilts toward web-to-app funnels. |
 | Desktop-only | The brief's bar is a functional page on a 4-6 hr budget. Reviewer is on desktop. | Easy to make responsive later. |
 
@@ -71,6 +72,7 @@ Secondary: a "Talk to sales" option for enterprise, always visible next to it.
 - IAP feature grid: a laundry list. Cut.
 - Daily payouts: no PM-level job attached.
 - Self-reported scale as the headline: no independent verification. Used BCV's sourced stat instead.
+- Web Billing and Web-to-App Funnels from the feature bento: Web Billing already has its own proof (Floga) in the closing section; Funnels is secondary per the user interview. Kept to 4 cards: Paywalls, Experiments, Targeting, Charts.
 
 ## Key messaging
 
