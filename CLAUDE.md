@@ -133,3 +133,21 @@ _Not yet scaffolded._ Stack is decided ([`docs/08-5`](docs/08-5-tech-stack.md)):
 - Log every meaningful decision, pivot, and prompt in `docs/00-process-and-assumptions.md` as you go — it's a graded deliverable. **Maintain the Tooling log table** there: record which AI tool/model was used for what and how.
 - Verify product claims against the brief PDF before they reach the page.
 - Reference the live page and RevenueCat brand before designing.
+
+## Writing standard
+
+All copy — README, page text, process docs — should follow this principle:
+
+> **The Day You Became A Better Writer** — Scott Adams
+>
+> Business writing is about clarity and persuasion. The main technique is keeping things simple. Simple writing is persuasive. A good argument in five sentences will sway more people than a brilliant argument in a hundred sentences.
+>
+> Simple means getting rid of extra words. Don't write "He was very happy" when you can write "He was happy." You think the word "very" adds something. It doesn't. Prune your sentences.
+>
+> Your first sentence needs to grab the reader.
+>
+> Write short sentences. Avoid putting multiple thoughts in one sentence.
+>
+> Learn how brains organize ideas. Readers comprehend "the boy hit the ball" quicker than "the ball was hit by the boy." Both sentences mean the same, but it's easier to imagine the object before the action. All brains work that way.
+
+Apply this to every deliverable. If a sentence can be cut, cut it. If a word can be removed, remove it. Short is persuasive. Long is noise.
