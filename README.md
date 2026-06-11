@@ -2,7 +2,7 @@
 
 [![Live site](https://img.shields.io/badge/➜%20Live%20site-5B7FFF?style=for-the-badge&logoColor=white)](https://revenuecat-three.vercel.app/)
 
-I treated this as a positioning problem first. No code was written until the messaging existed.
+I treated this as a positioning problem first. I wrote no code until the messaging existed.
 
 ---
 
@@ -23,15 +23,13 @@ I treated this as a positioning problem first. No code was written until the mes
 | "Start for free" is the primary CTA | The live page gates self-serve behind a demo request. RC is free to $2,500 MTR. No reason to gate. | Swap CTA priority based on conversion data. |
 | BCV's "~1/3 of new subscription apps" leads scale | No third party verifies RC's self-reported 106K apps / $14B figures. Sourced stat is more credible. | Self-reported figures are ready as a swap. |
 | Web Billing kept secondary | User interview: iOS/Android-only PM, zero web interest. Brief still requires it, so it earns a place. | Promote if the target audience tilts toward web-to-app funnels. |
-| Desktop-only | The brief's bar is a functional page on a 4-6 hr budget. Reviewer is on desktop. | A static Tailwind page is straightforward to make responsive as an additive pass. |
+| Desktop-only | The brief's bar is a functional page on a 4-6 hr budget. Reviewer is on desktop. | Easy to make responsive later. |
 
 ## Process
 
-Research ran in parallel. No code was written until the messaging existed.
+**Phase 1: Research.** Parallel Claude subagents ran across five areas: audience, product, competitors, live page teardown, and brand. Perplexity MCP sourced cited stats. A user interview with Tanmay Jain, a Monetization PM and current RevenueCat customer, gave us a real customer's perspective. Chrome DevTools MCP measured the live DOM. All findings went into [`docs/fact-sheet.md`](docs/fact-sheet.md).
 
-**Phase 1: Research.** Parallel Claude subagents ran across five areas at once: audience, product, competitors, live page teardown, and brand. Perplexity MCP sourced stats with citations. A user interview with Tanmay Jain, a Monetization PM and current RevenueCat customer, added first-party signal. Chrome DevTools MCP measured the live DOM. All findings went into [`docs/fact-sheet.md`](docs/fact-sheet.md).
-
-**Phase 2: Synthesis.** [Track 5](docs/05-positioning-and-narrative.md) consumed the evidence base and produced the messaging brief, 3 pillars, section arc, and cut-list. [Track 6](docs/06-conversion-and-cta.md) mapped CTAs and objection placement.
+**Phase 2: Synthesis.** [Track 5](docs/05-positioning-and-narrative.md) took the research and produced the messaging brief, 3 pillars, section arc, and deliberate cuts. [Track 6](docs/06-conversion-and-cta.md) mapped CTAs and objection placement.
 
 **Phase 3: Build.** Single static page, Tailwind, no framework. Deployed to Vercel.
 
@@ -39,23 +37,23 @@ Full log: [`docs/00-process-and-assumptions.md`](docs/00-process-and-assumptions
 
 ## Ideation
 
-The research kept surfacing three PM frustrations: they couldn't ship changes fast enough, they didn't trust their numbers across platforms, and they were making bets on data that was already stale. Those became the three pillars. The umbrella line, "Drive revenue at product speed," collapsed all three into one idea: the revenue lever exists, but PMs can't move it at product speed. Features were then mapped as evidence for each pillar rather than listed as a set.
+The research kept surfacing three PM frustrations: they couldn't ship changes fast enough, they didn't trust their numbers across platforms, and they were making bets on data that was already stale. Those became the three pillars. The umbrella line, "Drive revenue at product speed," collapsed all three into one idea: the revenue lever exists, but PMs can't move it at product speed. We mapped features as evidence for each pillar, not as a list.
 
-The emotional core underneath all three was the same: PMs felt gated by engineers. Every paywall change, every pricing test required a ticket, a sprint, and a release. RevenueCat removes that gate. The page leads with that relief.
+The real frustration underneath all three: PMs felt gated by engineers. Every paywall change, every pricing test required a ticket, a sprint, and a release. RevenueCat removes that gate. The page leads with that relief.
 
 ## Pivots
 
-- **Web Billing demoted.** Started as a co-equal feature. The user interview surfaced an iOS/Android-only PM with zero web interest, so it became secondary. The brief still requires it, so it earns a section, not the lead.
+- **Web Billing demoted.** Started as a co-equal feature. The user interview was with an iOS/Android-only PM who had zero web interest. It became secondary. The brief still requires it, so it earns a section, not the lead.
 - **Build-vs-buy became an objection, not a pillar.** Initially had its own section. But giving it that much space made the page feel defensive. Instead it runs underneath all three pillars: acknowledge the concern, reframe it quickly, keep moving.
 - **Scale stat switched.** Planned to lead with RC's self-reported 106K apps / $14B tracked revenue. Research found no third party verifies those figures. Swapped to BCV's sourced "~1/3 of new subscription apps."
-- **CTA flipped.** The live page leads with "Request a demo." Auditing the conversion logic showed that gates self-serve behind a sales call with no commercial reason to do so. "Start for free" became primary; demo became tertiary.
-- **Perplexity fabricated customer quotes.** A verification agent found Perplexity invented Hacker News users and quotes that don't exist. All fabricated material was discarded before reaching the page.
+- **CTA flipped.** The live page leads with "Request a demo." That's a sales gate with no reason to exist — RC is free to $2,500 MTR. "Start for free" became primary; demo became tertiary.
+- **Perplexity fabricated customer quotes.** A verification agent found Perplexity invented Hacker News users and quotes that don't exist. None of it reached the page.
 
 ## Page goal
 
-Get Monetization/Growth PMs to sign up for free. Every decision removes friction or de-risks the moment before that action.
+Get Monetization/Growth PMs to sign up for free.
 
-Secondary: a co-located "Talk to sales" path for enterprise, never buried.
+Secondary: a "Talk to sales" option for enterprise, always visible next to it.
 
 ## Included / excluded
 
@@ -69,7 +67,7 @@ Secondary: a co-located "Talk to sales" path for enterprise, never buried.
 
 **Out**
 - 5-persona router: dilutes focus.
-- Developer onboarding section: wrong altitude. Replaced with ecosystem-fit at PM level.
+- Developer onboarding section: wrong altitude. Replaced with a section about what it integrates with.
 - IAP feature grid: a laundry list. Cut.
 - Daily payouts: no PM-level job attached.
 - Self-reported scale as the headline: no independent verification. Used BCV's sourced stat instead.
