@@ -15,7 +15,6 @@
 
 | Assumption | Why |
 |---|---|
-| Hanken Grotesk + Inter instead of Object Sans | Object Sans is a paid font. Licensing violation to ship publicly. Near-identical substitute. |
 | Velocity leads the narrative | Defeats build-in-house directly. Verified by brief and ICP interview ("move wayyy faster"). |
 | Build-vs-buy is an objection, not a pillar | A pillar makes the page argue against a ghost. The brief says don't name competitors. |
 | Audience narrowed to the Monetization/Growth PM | The brief's JTBD describes exactly this person. One sharp persona beats a 5-persona router. |
