@@ -41,6 +41,8 @@ Full log: [`docs/00-process-and-assumptions.md`](docs/00-process-and-assumptions
 
 The research kept surfacing three PM frustrations: they couldn't ship changes fast enough, they didn't trust their numbers across platforms, and they were making bets on data that was already stale. Those became the three pillars. The umbrella line, "Drive revenue at product speed," collapsed all three into one idea: the revenue lever exists, but PMs can't move it at product speed. Features were then mapped as evidence for each pillar rather than listed as a set.
 
+The emotional core underneath all three was the same: PMs felt gated by engineers. Every paywall change, every pricing test required a ticket, a sprint, and a release. RevenueCat removes that gate. The page leads with that relief.
+
 ## Pivots
 
 - **Web Billing demoted.** Started as a co-equal feature. The user interview surfaced an iOS/Android-only PM with zero web interest, so it became secondary. The brief still requires it, so it earns a section, not the lead.
