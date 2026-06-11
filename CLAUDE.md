@@ -8,11 +8,9 @@ A take-home assignment for a **Product Marketing Manager (PMM)** role at Revenue
 
 The work is judged as **product marketing, not engineering**. The bar is narrative/positioning quality, visual storytelling, and demonstrated AI fluency — not code sophistication. Budget ~4–6 hours. Source of truth is `Take-Home Assignment - PMM at RevenueCat.pdf` — re-derive from it when in doubt.
 
-## Current status (2026-06-06)
+## Current status (2026-06-11)
 
-**Research is done and human-reviewable.** Tracks **1 (audience), 2 (product), 3 (competitive/build-vs-buy), 4 (teardown), 7 (proof)** are populated, and the consolidated **`docs/fact-sheet.md`** (the pre-synthesis review artifact, §0 brief-canon + §A–J research) is review-ready. Research was deepened over three parallel **subagent-workflow** passes + Perplexity MCP (now live), with claims source- and confidence-tagged. **Track 8 (brand/voice)** has design tokens measured from the live DOM (see `docs/08`).
-
-**Next:** Track **5 (positioning/synthesis)** — the ⭐ build gate — then 6 (conversion), then 9 (scaffold + build `site/`). **Do not build `site/` until Track 5's messaging brief + pillars exist.**
+**All tracks complete. Page built and deployed.** All research tracks (1–4, 7, 8) are done, the fact-sheet is populated, Track 5 messaging brief + pillars are committed (build gate resolved), Track 6 CTA strategy is locked, and Track 9 has scaffolded and shipped `site/index.html` + `site/styles.css` to Vercel. Two visual placeholders remain in the Velocity and Source-of-truth sections pending screenshot replacement (tracked in `CHECKLIST.md`). Track 0 process log is current.
 
 ## Hard constraints (do not violate)
 

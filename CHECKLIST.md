@@ -7,4 +7,5 @@
 
 ## Final checks
 
+- [ ] **Case study URLs** – Verify `/customers/elevenlabs`, `/customers/runna`, `/customers/ladder` resolve correctly (slugs inferred from the `/customers/floga` and `/customers/pixelcut` pattern; fix if they 404).
 - [ ] **Track 0 final audit** – Confirm all assumptions and tooling log entries are backfilled in `docs/00-process-and-assumptions.md`.
