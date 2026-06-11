@@ -46,7 +46,7 @@ The real frustration underneath all three: PMs felt gated by engineers. Every pa
 - **Web Billing demoted.** Started as a co-equal feature. The user interview was with an iOS/Android-only PM who had zero web interest. It became secondary. The brief still requires it, so it earns a section, not the lead.
 - **Build-vs-buy became an objection, not a pillar.** Initially had its own section. But giving it that much space made the page feel defensive. Instead it runs underneath all three pillars: acknowledge the concern, reframe it quickly, keep moving.
 - **Scale stat switched.** Planned to lead with RC's self-reported 106K apps / $14B tracked revenue. Research found no third party verifies those figures. Swapped to BCV's sourced "~1/3 of new subscription apps."
-- **CTA flipped.** The live page leads with "Request a demo." That's a sales gate with no reason to exist — RC is free to $2,500 MTR. "Start for free" became primary; demo became tertiary.
+- **CTA flipped.** The live page leads with "Request a demo." That's a sales gate with no reason to exist. RC is free to $2,500 MTR. "Start for free" became primary; demo became tertiary.
 - **Perplexity fabricated customer quotes.** A verification agent found Perplexity invented Hacker News users and quotes that don't exist. None of it reached the page.
 
 ## Page goal

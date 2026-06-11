@@ -23,6 +23,11 @@
   - [ ] `site/` – Deployable code, responsive, matches visual tokens
   - [ ] Live Vercel URL – functional, no 404s, all CTAs clickable
 
+## Visuals to source (two placeholder divs in site/index.html)
+
+- [ ] **Section 5 (Velocity) visual** – Replace `<div class="visual-ph">Paywall editor...</div>` with a screenshot of the RC no-code paywall builder. Source: revenuecat.com, the RC dashboard, or their press kit. A drag-and-drop editor screenshot is the most persuasive visual for the velocity claim.
+- [ ] **Section 6 (Source of truth) visual** – Replace `<div class="visual-ph">"One truth → many tools"...</div>` with a hub-and-spoke diagram or the RC Charts dashboard screenshot. Alternatively, a grid of integration logos (Amplitude, Mixpanel, Braze, BigQuery) with the RC hexagon at the center makes the "40+ integrations" claim visual.
+
 ## Quality & Nits
 
 - [ ] **Copy review** – No em dashes (`—`), all features → benefits → jobs, verify claims vs. brief PDF
