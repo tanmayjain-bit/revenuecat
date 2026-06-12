@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 32" width="120" height="32" fill="none">
+  <!-- Star icon -->
+  <path d="M16 4l2.9 8.7H28l-7.5 5.4 2.9 8.7L16 21.4l-7.5 5.4 2.9-8.7L4 12.7h9.1L16 4z" fill="#1F1F47"/>
+  <!-- Text -->
+  <text x="32" y="13" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#1F1F47">4.8 / 5</text>
+  <text x="32" y="25" font-family="Inter,sans-serif" font-size="7.5" font-weight="500" fill="#1F1F47" letter-spacing="0.2">G2 &amp; CAPTERRA</text>
+</svg>
