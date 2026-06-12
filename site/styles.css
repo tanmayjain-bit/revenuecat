@@ -162,12 +162,10 @@ img { max-width: 100%; display: block; }
   .two-up--reverse .two-up__copy { order: 0; }
 }
 
-/* ── Generic placeholder visual box ───────────────────────────── */
-.visual-ph {
-  border: 1px dashed var(--rc-border); border-radius: var(--rc-radius-card);
-  background: var(--rc-surface); min-height: 280px;
-  display: grid; place-items: center; color: var(--rc-ink-45);
-  font-size: 14px; text-align: center; padding: 24px;
+/* ── Split section product screenshot ─────────────────────────── */
+.split__img {
+  width: 100%; height: auto; display: block;
+  border-radius: 16px; box-shadow: var(--rc-shadow-float);
 }
 
 /* ── Feature tiles ────────────────────────────────────────────── */
