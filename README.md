@@ -8,7 +8,7 @@ I treated this as a positioning problem first. I wrote no code until the messagi
 
 ## AI tools
 
-- **Claude Code (Opus 4.8)**: my primary tool throughout. I ran research as parallel subagent workflows — multiple agents working simultaneously, each scoped to one area (audience, competitors, live page teardown, brand tokens). They fed into a shared evidence base. A synthesis agent then collapsed the findings into a positioning brief. Only after that did I write code.
+- **Claude Code (Opus 4.8)**: my primary tool throughout. I ran research as parallel subagent workflows, multiple agents each scoped to one area (audience, competitors, live page teardown, brand tokens). They fed into a shared evidence base. A synthesis agent collapsed the findings into a positioning brief. Only after that did I write code.
 - **Perplexity MCP**: citation-backed sourcing for competitor facts and market stats.
 - **Chrome DevTools MCP**: I measured design tokens directly from the live DOM. No guessing from screenshots.
 - **WebSearch / WebFetch**: live page teardown and competitor reads.
@@ -40,9 +40,9 @@ Full log: [`docs/00-process-and-assumptions.md`](docs/00-process-and-assumptions
 
 ## Ideation
 
-Three PM frustrations kept showing up no matter where I looked: they couldn't ship changes fast enough, they didn't trust their numbers across platforms, and they were making bets on data that was already stale. Those became my three pillars. The umbrella line I landed on, "Drive revenue at product speed," collapses all three: the revenue lever exists, but PMs can't move it at product speed. I mapped features as evidence for each pillar, not as a list.
+Three PM frustrations kept showing up: they couldn't ship changes fast enough, they didn't trust their numbers across platforms, and they were making bets on stale data. Those became my three pillars. The line I landed on, "Drive revenue at product speed," collapses all three. I mapped features as evidence for each pillar, not as a list.
 
-The frustration underneath all three is the same: PMs feel gated by engineers. Every paywall change, every pricing test needs a ticket, a sprint, a release. RevenueCat removes that gate. I lead with that relief.
+The frustration underneath all three is the same: PMs feel gated by engineers. Every paywall change, every pricing test needs a ticket, a sprint, a release. I lead with that relief.
 
 I ordered sections to follow the buyer's mental journey. Velocity comes first because it is the sharpest, most universal pain. Source of truth follows, because a PM who believes they can ship faster will immediately ask "but will my numbers be reliable?" Forward-looking closes the product story, because predicted LTV is the most differentiated claim. Social proof and Web Billing follow: proof the platform is trusted at scale, then the commission angle for the PM who is already sold on the core.
 
