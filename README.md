@@ -1,6 +1,6 @@
 # RevenueCat PMM Take-Home
 
-[![Live site](https://img.shields.io/badge/➜%20Live%20site-5B7FFF?style=for-the-badge&logoColor=white)](https://revenuecat-three.vercel.app/)
+<a href="https://revenuecat-three.vercel.app/"><img src="https://img.shields.io/badge/➜%20Live%20site-F2545B?style=for-the-badge&logoColor=white" height="40"/></a>
 
 I treated this as a positioning problem first. I wrote no code until the messaging existed.
 
