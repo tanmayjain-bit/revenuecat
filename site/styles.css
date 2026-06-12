@@ -85,6 +85,7 @@ img { max-width: 100%; display: block; }
 
 /* ── Layout helpers ───────────────────────────────────────────── */
 .section { padding-block: var(--rc-section-y); }
+.split + .split { padding-top: 0; }
 .section--tint { background: var(--rc-surface); }
 .section--dark { background: var(--rc-ink-surface); color: #fff; }
 .section--dark h2, .section--dark h1 { color: #fff; }
