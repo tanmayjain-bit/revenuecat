@@ -220,7 +220,7 @@ img { max-width: 100%; display: block; }
 .section--dark .quote { background: rgba(255,255,255,0.06); }
 .quote blockquote { font-family: var(--rc-font-head); font-size: 22px; line-height: 1.4; margin: 0 0 20px; }
 .quote figcaption { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--rc-ink-70); }
-.quote__metric { color: var(--rc-coral-ink); font-weight: 600; margin-top: 16px; }
+.quote__metric { color: var(--rc-coral-ink); font-weight: 600; margin-top: 16px; margin-bottom: 24px; }
 .trust-badges {
   display: flex; gap: clamp(24px, 4vw, 48px);
   justify-content: center; align-items: center;
@@ -417,15 +417,15 @@ img { max-width: 100%; display: block; }
 
 /* ── Inline testimonial card (inside split copy column) ── */
 .inline-quote {
-  border-left: 3px solid var(--rc-indigo);
   background: var(--rc-surface-1);
-  border-radius: 0 10px 10px 0;
-  padding: 16px 20px;
-  margin: 0;
+  border: 1px solid rgba(31,31,71,0.08);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin: 0 0 24px;
 }
 .inline-quote blockquote {
   font-size: 15px; line-height: 1.55; color: var(--rc-ink);
-  font-style: italic; margin: 0 0 12px;
+  font-style: italic; margin: 0 0 14px;
 }
 .inline-quote figcaption {
   display: flex; align-items: center; gap: 10px;
