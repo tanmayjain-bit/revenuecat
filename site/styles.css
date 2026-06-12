@@ -221,7 +221,13 @@ img { max-width: 100%; display: block; }
 .quote blockquote { font-family: var(--rc-font-head); font-size: 22px; line-height: 1.4; margin: 0 0 20px; }
 .quote figcaption { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--rc-ink-70); }
 .quote__metric { color: var(--rc-coral-ink); font-weight: 600; margin-top: 16px; }
-.trust-row { margin-top: 20px; font-size: 14px; font-weight: 500; letter-spacing: .01em; color: var(--rc-ink-45); }
+.trust-badges {
+  display: flex; gap: clamp(24px, 4vw, 48px);
+  justify-content: center; align-items: center;
+  margin-top: 28px;
+  filter: grayscale(1); opacity: .65;
+}
+.trust-badge { height: 32px; width: auto; display: block; }
 
 /* ── CTA band ─────────────────────────────────────────────────── */
 .cta-band { text-align: center; }
@@ -339,6 +345,7 @@ img { max-width: 100%; display: block; }
   background: var(--rc-surface-2); display: grid; place-items: center;
   font-size: 12px; color: var(--rc-ink-45);
 }
+.quote__app-icon { width: 48px; height: 48px; border-radius: 12px; object-fit: cover; display: block; }
 
 /* ── 5/6. Split sections (copy + visual, alternating) ───────── */
 .split__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 96px); align-items: center; }
@@ -406,6 +413,25 @@ img { max-width: 100%; display: block; }
 }
 .case:hover { transform: translateY(-4px); box-shadow: var(--rc-shadow-card); }
 .case__logo { height: 22px; width: auto; filter: grayscale(1); opacity: .75; align-self: flex-start; }
+.case__icon { width: 48px !important; height: 48px !important; max-width: 48px; border-radius: 12px; object-fit: cover; align-self: flex-start; margin-bottom: 4px; flex-shrink: 0; }
+
+/* ── Inline testimonial card (inside split copy column) ── */
+.inline-quote {
+  border-left: 3px solid var(--rc-indigo);
+  background: var(--rc-surface-1);
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  margin: 0;
+}
+.inline-quote blockquote {
+  font-size: 15px; line-height: 1.55; color: var(--rc-ink);
+  font-style: italic; margin: 0 0 12px;
+}
+.inline-quote figcaption {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--rc-ink-70);
+}
+.inline-quote__icon { width: 32px !important; height: 32px !important; max-width: 32px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
 .case__metric { font-family: var(--rc-font-head); font-weight: 500; font-size: 24px; color: var(--rc-ink); letter-spacing: -.03em; line-height: 1.15; }
 .case__metric .accent { color: var(--rc-coral); }
 .case__source { color: var(--rc-ink-70); font-size: 14px; line-height: 1.45; }
