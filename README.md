@@ -28,27 +28,15 @@ I treated this as a positioning problem first. I wrote no code until the messagi
 
 ## Process
 
+The brief described the target audience precisely: PMs who own user experience and product strategy, care about aligning monetization with user value, and feel the pain when they cannot move fast. They are not writing billing code. They are waiting on someone who is. That framing set the scope for everything that followed.
+
 **Phase 1: Research.** Parallel Claude subagents ran across five areas: audience, product, competitors, live page teardown, and brand. Perplexity MCP sourced cited stats. A user interview with Tanmay Jain, a Monetization PM and current RevenueCat customer, gave us a real customer's perspective. Chrome DevTools MCP measured the live DOM. All findings went into [`docs/fact-sheet.md`](docs/fact-sheet.md).
 
-**Phase 2: Synthesis.** [Track 5](docs/05-positioning-and-narrative.md) took the research and produced the messaging brief, 3 pillars, section arc, and deliberate cuts. [Track 6](docs/06-conversion-and-cta.md) mapped CTAs and objection placement.
+**Phase 2: Synthesis.** [Track 5](docs/05-positioning-and-narrative.md) took the research and produced the messaging brief, 3 pillars, section arc, and deliberate cuts. The rule was: every feature earns its place by answering a specific PM job. Paywalls answer "I want to test pricing but I can't wait for engineering." Predicted LTV answers "I want to call a winner before the experiment runs for 90 days." Features without a clear job got cut. [Track 6](docs/06-conversion-and-cta.md) mapped CTAs and objection placement.
 
 **Phase 3: Build.** Single static page, Tailwind, no framework. Deployed to Vercel.
 
 Full log: [`docs/00-process-and-assumptions.md`](docs/00-process-and-assumptions.md)
-
-## PMM thinking
-
-The brief described the audience precisely: PMs who own user experience and product strategy, care about aligning monetization with user value, and feel the pain when they cannot move fast. They are not writing billing code. They are waiting on someone who is.
-
-That framing decided everything. The page is not about RevenueCat's features. It is about returning control to the PM.
-
-**Jobs-to-be-done first.** Every feature on the page earns its place by answering a specific PM job. Paywalls answer: "I want to test pricing but I can't wait for engineering." Predicted LTV answers: "I want to call a winner before the experiment runs for 90 days." Charts answer: "I want one place to check, not four." Features without a job got cut.
-
-**The emotional arc: relief, then confidence, then decision.** The hero leads with the relief ("you could already be shipping this faster"). The middle sections build confidence with proof: real customer names, real numbers, verified sources. The close makes the decision easy: free to start, no sales gate, enterprise option always visible alongside it.
-
-**Build-vs-buy is the real alternative.** A smart PM's first instinct is "can we build this?" Named competitors are irrelevant here. The page concedes RC's 1% fee honestly, then reframes: receipts, refunds, and renewals are solved. Paywalls come free on top of billing you would build anyway. That objection runs underneath all three pillars rather than in its own section, because a dedicated section would make the page feel defensive.
-
-**Section order follows the buyer's mental journey.** Hero establishes the category and the tension. Velocity section hits the gated-by-engineering pain first, because that is the sharpest and most universal. Source of truth follows, because once PMs believe they can ship faster, they ask "but will my numbers be reliable?" Forward-looking closes the product story, because it is the most differentiated claim. Social proof and Web Billing come after: proof the platform is trusted at scale, then the commission angle for the PM who is already convinced.
 
 ## Ideation
 
@@ -56,12 +44,14 @@ The research kept surfacing three PM frustrations: they couldn't ship changes fa
 
 The real frustration underneath all three: PMs felt gated by engineers. Every paywall change, every pricing test required a ticket, a sprint, and a release. RevenueCat removes that gate. The page leads with that relief.
 
+The section order follows the buyer's mental journey. Velocity hits first because it is the sharpest, most universal pain. Source of truth follows, because a PM who believes they can ship faster will immediately ask "but will my numbers be reliable?" Forward-looking closes the product story, because predicted LTV is the most differentiated claim. Social proof and Web Billing come after: proof the platform is trusted at scale, then the commission angle for the PM who is already convinced.
+
 ## Pivots
 
 - **Web Billing demoted.** Started as a co-equal feature. The user interview was with an iOS/Android-only PM who had zero web interest. It became secondary. The brief still requires it, so it earns a section, not the lead.
-- **Build-vs-buy became an objection, not a pillar.** Initially had its own section. But giving it that much space made the page feel defensive. Instead it runs underneath all three pillars: acknowledge the concern, reframe it quickly, keep moving.
+- **Build-vs-buy became an objection, not a pillar.** Initially had its own section. But giving it that much space made the page feel defensive. A smart PM's first instinct is "can we build this?" — the page concedes RC's 1% fee honestly, then reframes quickly and keeps moving. That runs underneath all three pillars, not above them.
 - **Scale stat switched.** Planned to lead with RC's self-reported 106K apps / $14B tracked revenue. Research found no third party verifies those figures. Swapped to BCV's sourced "~1/3 of new subscription apps."
-- **CTA flipped.** The live page leads with "Request a demo." That's a sales gate with no reason to exist. RC is free to $2,500 MTR. "Start for free" became primary; demo became tertiary.
+- **CTA flipped.** The live page leads with "Request a demo." That's a sales gate with no reason to exist. RC is free to $2,500 MTR. "Start for free" became primary; demo became tertiary. The emotional arc is relief first, then confidence through proof, then an easy decision: free to start, enterprise option always visible alongside it.
 - **Perplexity fabricated customer quotes.** A verification agent found Perplexity invented Hacker News users and quotes that don't exist. None of it reached the page.
 
 ## Page goal
@@ -81,9 +71,9 @@ Secondary: a "Talk to sales" option for enterprise, always visible next to it.
 - Web Billing (secondary): brief requires it. Floga proof is strong.
 
 **Out**
-- 5-persona router: dilutes focus.
-- Developer onboarding section: wrong altitude. Replaced with a section about what it integrates with.
-- IAP feature grid: a laundry list. Cut.
+- 5-persona router: dilutes focus. One sharp persona beats a router.
+- Developer onboarding section: wrong altitude for a PM audience. Replaced with a section about what it integrates with.
+- IAP feature grid: a laundry list. The brief explicitly penalizes this. Cut.
 - Daily payouts: no PM-level job attached.
 - Self-reported scale as the headline: no independent verification. Used BCV's sourced stat instead.
 - Web Billing and Web-to-App Funnels from the feature bento: Web Billing already has its own proof (Floga) in the closing section; Funnels is secondary per the user interview. Kept to 4 cards: Paywalls, Experiments, Targeting, Charts.
@@ -100,7 +90,7 @@ Full positioning brief: [`docs/05-positioning-and-narrative.md`](docs/05-positio
 2. **Source of truth.** One view across iOS, Android, and web. 40+ integrations. "I barely look at the platform dashboards" (user interview).
 3. **Forward-looking.** Know the 12-month winner in week one. Predict LTV mid-experiment, not after 90 days of lag.
 
-Build-vs-buy runs underneath all three. Concede RC's 1% fee. Reframe: receipts, refunds, and renewals are solved. Paywalls come free on top of billing you would build anyway.
+Build-vs-buy runs underneath all three. The real alternative for this audience is not a named competitor — it is "we'll build it in-house." The page concedes RC's 1% fee, then reframes: receipts, refunds, and renewals are solved. Paywalls come free on top of billing you would build anyway.
 
 Voice: verb first, "you"-led, quantified. "Change your paywall without shipping an app update."
 
