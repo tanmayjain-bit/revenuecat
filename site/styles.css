@@ -328,14 +328,15 @@ img { max-width: 100%; display: block; }
 
 /* Icon coin — design.md: 48px soft square, surface fill, card shadow, accent glyph */
 .fcard__icon {
-  width: 48px; height: 48px; border-radius: var(--rc-radius-icon);
-  background: var(--rc-surface); box-shadow: var(--rc-shadow-card);
+  width: 60px; height: 60px; border-radius: 50%;
+  background: rgba(255,255,255,0.8);
   display: grid; place-items: center; margin-bottom: 16px;
-  font-size: 18px; line-height: 1; color: var(--rc-ink-70);
+  flex-shrink: 0;
 }
-.fcard__icon--red   { color: var(--rc-coral); }
-.fcard__icon--green { color: var(--rc-green); }
-.fcard__icon--blue  { color: var(--rc-indigo); }
+.fcard__icon svg { width: 28px; height: 28px; }
+.fcard__icon--red   { color: var(--rc-coral);  box-shadow: rgba(248,230,230,0.6) 0px 6px 20px 0px, rgba(191,64,64,0.12) 0px 2px 8px 0px; }
+.fcard__icon--green { color: var(--rc-green);  box-shadow: rgba(219,240,231,0.6) 0px 6px 20px 0px, rgba(76,178,136,0.16) 0px 2px 8px 0px; }
+.fcard__icon--blue  { color: var(--rc-indigo); box-shadow: rgba(230,233,248,0.7) 0px 6px 20px 0px, rgba(92,112,214,0.2) 0px 2px 8px 0px; }
 
 /* ── 4. Testimonial — design.md .quote card ─────────────────── */
 .quote--feature { max-width: 820px; margin: 0 auto; }
