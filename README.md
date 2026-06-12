@@ -36,6 +36,20 @@ I treated this as a positioning problem first. I wrote no code until the messagi
 
 Full log: [`docs/00-process-and-assumptions.md`](docs/00-process-and-assumptions.md)
 
+## PMM thinking
+
+The brief described the audience precisely: PMs who own user experience and product strategy, care about aligning monetization with user value, and feel the pain when they cannot move fast. They are not writing billing code. They are waiting on someone who is.
+
+That framing decided everything. The page is not about RevenueCat's features. It is about returning control to the PM.
+
+**Jobs-to-be-done first.** Every feature on the page earns its place by answering a specific PM job. Paywalls answer: "I want to test pricing but I can't wait for engineering." Predicted LTV answers: "I want to call a winner before the experiment runs for 90 days." Charts answer: "I want one place to check, not four." Features without a job got cut.
+
+**The emotional arc: relief, then confidence, then decision.** The hero leads with the relief ("you could already be shipping this faster"). The middle sections build confidence with proof: real customer names, real numbers, verified sources. The close makes the decision easy: free to start, no sales gate, enterprise option always visible alongside it.
+
+**Build-vs-buy is the real alternative.** A smart PM's first instinct is "can we build this?" Named competitors are irrelevant here. The page concedes RC's 1% fee honestly, then reframes: receipts, refunds, and renewals are solved. Paywalls come free on top of billing you would build anyway. That objection runs underneath all three pillars rather than in its own section, because a dedicated section would make the page feel defensive.
+
+**Section order follows the buyer's mental journey.** Hero establishes the category and the tension. Velocity section hits the gated-by-engineering pain first, because that is the sharpest and most universal. Source of truth follows, because once PMs believe they can ship faster, they ask "but will my numbers be reliable?" Forward-looking closes the product story, because it is the most differentiated claim. Social proof and Web Billing come after: proof the platform is trusted at scale, then the commission angle for the PM who is already convinced.
+
 ## Ideation
 
 The research kept surfacing three PM frustrations: they couldn't ship changes fast enough, they didn't trust their numbers across platforms, and they were making bets on data that was already stale. Those became the three pillars. The umbrella line, "Drive revenue at product speed," collapsed all three into one idea: the revenue lever exists, but PMs can't move it at product speed. We mapped features as evidence for each pillar, not as a list.
